@@ -4,8 +4,10 @@ public class CtoFConverter
     public static void main(String[] args)
     {
         Scanner input = new Scanner(System.in);
-        double Celsius;
-        boolean Done = false;
+        double celsius;
+        boolean done = false;
+
+        String trash = "";
 
         do
         {
@@ -13,21 +15,21 @@ public class CtoFConverter
 
             if (input.hasNextDouble())
             {
-                Celsius = input.nextDouble();
+                celsius = input.nextDouble();
 
-                Done = true;
+                done = true;
 
-                double Fahrenheit = (Celsius * 9 /5) + 32;
+                double Fahrenheit = (celsius * 9 /5) + 32;
 
-                System.out.println("Temperature in fahrenheit: " + Fahrenheit);
+                System.out.print("Temperature in fahrenheit: " + Fahrenheit);
             }
             else
             {
-                System.out.println("Invalid input. Please enter a valid number.");
-                input.nextLine();
+                trash = input.nextLine();
+                System.out.println("Invalid input. Please enter a valid number not " + trash + ".");
             }
         }
-        while (!Done);
+        while (!done);
 
     }
 }

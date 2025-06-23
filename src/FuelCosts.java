@@ -6,97 +6,101 @@ public class FuelCosts
     {
         Scanner input = new Scanner(System.in);
 
-        double Gallons = 0;
-        double FuelEfficiency = 0;
-        double GasPrice = 0 ;
+        double gallons = 0;
+        double fuelEfficiency = 0;
+        double gasPrice = 0;
+        String trash = ""; // Variable to hold any invalid input
 
-        double LargeGasPrice;
-        double GasMileage;
+        double largeGasPrice;
+        double gasMileage;
 
-        boolean Done = false; // checks if each input is valid
+        boolean done = false; // checks if each input is valid
 
         do
         {
-            System.out.println("How much gallons are in your gas tank? : ");
+            System.out.print("\nHow much gallons are in your gas tank? : ");
             if (input.hasNextDouble())
             {
-                Gallons = input.nextDouble();
+                gallons = input.nextDouble();
+                input.nextLine();
 
-                if (Gallons < 0)
+                if (gallons < 0)
                 {
-                    System.out.println("Gallons cannot be negative. Please enter a valid number.");
+                    System.out.println("Gallons cannot be negative. Please enter a valid number not " + gallons + ".");
                 }
                 else
                 {
-                    Done = true;
+                    done = true;
                 }
             }
             else
             {
-                System.out.println("Invalid input. Please enter a valid number.");
-                input.nextLine();
+                trash = input.nextLine();
+                System.out.println("Invalid input. Please enter a valid number not " + trash + ".");
             }
         }
-        while (!Done);
+        while (!done);
 
-        Done = false; // Reset Done for the next input
+        done = false; // Reset done for the next input
 
         do
         {
-            System.out.println("What is you fuel efficiency in miles per gallon? : ");
+            System.out.print("\nWhat is you fuel efficiency in miles per gallon? : ");
 
             if (input.hasNextDouble())
             {
-                FuelEfficiency = input.nextDouble();
+                fuelEfficiency = input.nextDouble();
+                input.nextLine();
 
-                if (FuelEfficiency < 0)
+                if (fuelEfficiency < 0)
                 {
-                    System.out.println("Fuel efficiency cannot be negative. Please enter a valid number.");
+                    System.out.println("Fuel efficiency cannot be negative. Please enter a valid number not " + fuelEfficiency + ".");
                 }
                 else
                 {
-                    Done = true;
+                    done = true;
                 }
             }
             else
             {
-                System.out.println("Invalid input. Please enter a valid number.");
-                input.nextLine();
+                trash = input.nextLine();
+                System.out.println("Invalid input. Please enter a valid number not " + trash + ".");
             }
         }
-        while (!Done);
+        while (!done);
 
-        Done = false; // Reset Done for the next input
+        done = false; // Reset done for the next input
 
         do
         {
-            System.out.println("How much does one gallon of gas cost? : ");
+            System.out.print("\nHow much does one gallon of gas cost? : ");
 
             if (input.hasNextDouble())
             {
-                GasPrice = input.nextDouble();
+                gasPrice = input.nextDouble();
+                input.nextLine();
 
-                if (GasPrice < 0)
+                if (gasPrice < 0)
                 {
-                    System.out.println("Gas price cannot be negative. Please enter a valid number.");
+                    System.out.println("Gas price cannot be negative. Please enter a valid number not " + gasPrice + ".");
                 }
                 else
                 {
-                    Done = true;
+                    done = true;
                 }
             }
             else
             {
-                System.out.println("Invalid input. Please enter a valid number.");
-                input.nextLine();
+                trash = input.nextLine();
+                System.out.println("Invalid input. Please enter a valid number not " + trash + ".");
             }
         }
-        while (!Done);
+        while (!done);
 
-        LargeGasPrice = (100 / FuelEfficiency) * GasPrice;
-        System.out.printf("Cost to drive 100 miles: $%.2f%n", LargeGasPrice);
+        largeGasPrice = (100 / fuelEfficiency) * gasPrice;
+        System.out.printf("\nCost to drive 100 miles: $%.2f%n", largeGasPrice);
 
-        GasMileage = Gallons * FuelEfficiency;
-        System.out.printf("You can drive a total of: %.2f miles", GasMileage);
+        gasMileage = gallons * fuelEfficiency;
+        System.out.printf("You can drive a total of: %.2f miles", gasMileage);
     }
 }

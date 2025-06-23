@@ -8,7 +8,9 @@ public class HighorLow
         Random generator = new Random();
         int numtoGuess = generator.nextInt(10) + 1; // Random number between 1 and 10
 
-        boolean Done = false; // checks if the input is valid
+        boolean done = false; // checks if the input is valid
+        String trash = ""; // Variable to hold any invalid input
+
         int userGuess = 0;
 
         Scanner input = new Scanner(System.in);
@@ -27,7 +29,7 @@ public class HighorLow
                 }
                 else
                 {
-                    Done = true;
+                    done = true;
 
                     if (userGuess < numtoGuess)
                     {
@@ -48,10 +50,11 @@ public class HighorLow
             }
             else
             {
-                System.out.println("Invalid input. Please enter a valid number.");
-                input.nextLine(); // Clear the invalid input
+                trash = input.nextLine();
+                System.out.println("Invalid input. Please enter a valid number not " + trash + ".");
+                // Clear the invalid input
             }
         }
-        while (!Done);
+        while (!done);
     }
 }

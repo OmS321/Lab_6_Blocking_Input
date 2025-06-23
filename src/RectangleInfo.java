@@ -11,7 +11,7 @@ public class RectangleInfo
         double rPerimeter;
         double rDiagonal;
 
-        boolean Done = false; // checks if each input is valid
+        boolean done = false; // checks if each input is valid
 
         Scanner input = new Scanner(System.in);
 
@@ -29,20 +29,20 @@ public class RectangleInfo
                 }
                 else
                 {
-                    Done = true;
+                    done = true;
                 }
             }
 
             else
             {
                 System.out.println("Invalid input. Please enter a valid number.");
-                input.nextLine();
+                input.next();
             }
         }
-        while (!Done);
+        while (!done);
 
 
-        Done = false; // Reset Done for the next input
+        done = false; // Reset done for the next input
 
 
         do
@@ -59,16 +59,18 @@ public class RectangleInfo
                 }
                 else
                 {
-                    Done = true;
+                    done = true;
                 }
             }
+
             else
             {
                 System.out.println("Invalid input. Please enter a valid number.");
-                input.nextLine();
+                input.next();
             }
         }
-        while (!Done);
+        while (!done);
+
 
         rArea = rWidth * rLength;
         rPerimeter = 2 * (rWidth + rLength);
