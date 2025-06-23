@@ -1,10 +1,13 @@
 import java.util.Scanner;
+import java.util.Random;
 
 public class HighorLow
 {
     public static void main(String[] args)
     {
-        int numtoGuess = (int) (Math.random() * 10) + 1; // Random number between 1 and 10
+        Random generator = new Random();
+        int numtoGuess = generator.nextInt(10) + 1; // Random number between 1 and 10
+
         boolean Done = false; // checks if the input is valid
         int userGuess = 0;
 
