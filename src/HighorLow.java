@@ -46,7 +46,7 @@ public class HighorLow
             else
             {
                 System.out.println("Invalid input. Please enter a valid number.");
-                input.next(); // Clear the invalid input
+                input.nextLine(); // Clear the invalid input
             }
         }
         while (!Done);

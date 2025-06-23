@@ -34,7 +34,7 @@ public class FuelCosts
             else
             {
                 System.out.println("Invalid input. Please enter a valid number.");
-                input.next();
+                input.nextLine();
             }
         }
         while (!Done);
@@ -61,7 +61,7 @@ public class FuelCosts
             else
             {
                 System.out.println("Invalid input. Please enter a valid number.");
-                input.next();
+                input.nextLine();
             }
         }
         while (!Done);
@@ -88,7 +88,7 @@ public class FuelCosts
             else
             {
                 System.out.println("Invalid input. Please enter a valid number.");
-                input.next();
+                input.nextLine();
             }
         }
         while (!Done);
